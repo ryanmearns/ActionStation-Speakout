@@ -1,0 +1,44 @@
+{
+  "name": "ActionStation-Speakout",
+  "scripts": {
+  },
+  "env": {
+    "HEROKU": {
+      "required": true
+    },
+    "LANG": {
+      "required": true
+    },
+    "RACK_ENV": {
+      "required": true
+    },
+    "SESSION_SECRET": {
+      "required": true
+    }
+  },
+  "formation": {
+    "admin_worker": {
+      "quantity": 1,
+      "size": "Standard-1X"
+    },
+    "worker": {
+      "quantity": 1,
+      "size": "Standard-1X"
+    },
+    "web": {
+      "quantity": 1,
+      "size": "Standard-1X"
+    }
+  },
+  "addons": [
+    "memcachedcloud",
+    "papertrail",
+    "heroku-postgresql",
+    "sendgrid"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}
